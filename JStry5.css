@@ -1,0 +1,51 @@
+body{
+    background-color: rgb(250, 250, 250);
+    border-top: 10px solid rgb(51, 51, 51);
+    border-bottom: 10px solid rgb(51, 51, 51);
+    font-family:Microsoft JhengHei;
+    margin: 0 ;
+    padding: 0;
+    width: 100%;
+    height:100%;
+    text-align: center;
+}
+
+ul {list-style: none; position: relative;}
+ul li {float: left; position: relative;margin: 0 5px;}
+ul li a {display: block;}
+ul ul {display: none; position: absolute; margin: 0;padding: 0;}
+ul ul li {clear: left;   padding: 0;text-align: left;}
+
+
+.center{
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+}
+.logo{
+    float: left;
+    width: 55%;
+    text-align: left;
+}
+.list{
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    font-size: 10px;
+}
+.img-big{height: 656px;}
+.img-big img{max-width: 100%;vertical-align:50%}
+.img-small ul{   margin: 0;padding: 0;width: 100%;}
+.img-small ul li{
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.img-small{overflow:hidden;height: 80px;width: 945px;}
+.w380h75{width:315px;  margin-top: -51px; }
+.row{height: 1830px;width: 100%;}
+.readme{color: #777777;line-height: 150px;}
+.pictext{width: 250px;height: 400px;}
+.pic{height: 250px;}
+.text{color:#606060;font-size: 10px;}
