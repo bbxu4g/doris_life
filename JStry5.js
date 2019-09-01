@@ -10,30 +10,51 @@ $(function () {
 
     $.ajax({
         url: "./test.json",  //要讀取的檔案路徑
-        data:{},
+        data: {},
         type: "GET", //讀取方式的類型，GET POST
-        async:true, 
+        async: true,
         dataType: "json", //資料類型
         success: function (data) { //成功後執行
-           for (var i = 0; i < data.first.length; i++) {
+            for (var i = 0; i < data.first.length; i++) {
                 $(".row").append("<div class='pictext'>" +
-                    "<img class='pic' src='" + data.first[i].pic + "'>" +
+                    "<div  class='p2'><img onmouseover='picmouseover(this)' onmouseout='picmouseout(this)' class='pic' src='" + data.first[i].pic + "'>" +
                     "<h4 class='text'>" + data.first[i].h4 + "</h4>" +
-                    "<p class='text'>" + data.first[i].p + "</p>");
-                    console.log(data.first.length);
+                    "<p class='text'>" + data.first[i].p + "</p></div><div class='p1' >"+ data.first[i].date +"</div>");
+                //       console.log(data.first.length);
             }
-           
-               
-            
-
         },
         error: function () { //錯誤的時候執行
             alert("ERROR!!!");
         }
     });
-
-
 });
+
+function imgsmall(imgsmall){
+    var j=$(".img-small>ul").length;
+    var showImage = $('#show-img');
+    
+    $('.w380h75').click(function () {
+        var i=$(this).attr("id").substr(0);
+        showImage.attr('src',"./top"+i+".JPG");
+   
+        $(".w380h75"). css("opacity","0.3");
+        $(this).css('opacity',"1");
+      
+    })
+// console.log($(".w380h75").length);
+}
+
+
+function picmouseover(pic) {
+    var css = { "border":"solid","border-color":"#010132","opacity":"0.3","object-fit":"none","width":"212px","height":"212px"}
+ $(pic).css(css);
+}
+function picmouseout(pic) {
+    var css = {"border":"none","opacity":"1","object-fit":"unset","width":"220px","height":"220px"}
+ $(pic).css(css);
+}
+
+
 
 function back() {
     j = $(".small-pic>img").length;
@@ -52,13 +73,3 @@ function next() {
     else { i++; showImage.attr('src', "./" + i + ".JPG"); }
 
 }
-// $.getJSON('json.json', function (data) {
-//     var html = '';
-//     $.each(data, function (i, item) {
-//         html = '<TR><TD>'+ item['name'] +'</TD>'+
-//         '<TD>'+ item['sex'] +'</TD>'+
-//         '<TD>'+item.address +'</TD>'+
-//         '<TD>'+ item['home']+ '</TD></TR>';
-//     });
-//     $('#title').after(html);
-// });
