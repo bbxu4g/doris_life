@@ -37,6 +37,7 @@ ul ul li {clear: left;   padding: 0;text-align: left;}
 }
 .img-big{height: 656px;width: 1280px;overflow: hidden;}
 .img-big img{max-width: 100%;vertical-align:50%}
+.control{font-size: 30px;font-weight: bold;color: #777777;}
 .img-small ul{   margin: 0;padding: 0;}
 .img-small ul li{
     display: inline;
