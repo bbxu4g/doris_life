@@ -57,19 +57,20 @@ function picmouseout(pic) {
 
 
 function back() {
-    j = $(".small-pic>img").length;
+    j = $(".w380h75").length;
     var showImage = $('#show-img');
-    var i = $('#show-img').attr("src").substr(2, 1);
-    if (i == 1) { i = j; showImage.attr('src', "./" + i + ".JPG"); }
-    else { i--; showImage.attr('src', "./" + i + ".JPG"); }
+    var i = $('#show-img').attr("src").substr(5, 1);
+    console.log(j);
+    if (i == 1) { i = j; showImage.attr('src', "./top" + i + ".jpg"); }
+    else { i--; showImage.attr('src', "./top" + i + ".jpg"); }
     //  console.log(showImage.attr("src").substr(2,1));
 
 }
 function next() {
-    j = $(".small-pic>img").length;
+    j = $(".w380h75").length;
     var showImage = $('#show-img');
-    var i = $('#show-img').attr("src").substr(2, 1);
-    if (i == j) { i = 1; showImage.attr('src', "./" + i + ".JPG"); }
-    else { i++; showImage.attr('src', "./" + i + ".JPG"); }
+    var i = $('#show-img').attr("src").substr(5, 1);
+    if (i == j) { i = 1; showImage.attr('src', "./top" + i + ".jpg"); }
+    else { i++; showImage.attr('src', "./top" + i + ".jpg"); }
 
 }
