@@ -6,7 +6,7 @@ $(function () {
 
         showImage.attr('src', "./" + i + ".JPG");
     })
-    console.log($(".small-pic>img").length);
+   // console.log($(".small-pic>img").length);
 
     $.ajax({
         url: "./test.json",  //要讀取的檔案路徑
@@ -19,7 +19,7 @@ $(function () {
                 $(".row").append("<div class='pictext'>" +
                     "<div  class='p2'><img onmouseover='picmouseover(this)' onmouseout='picmouseout(this)' class='pic' src='" + data.first[i].pic + "'>" +
                     "<h4 class='text'>" + data.first[i].h4 + "</h4>" +
-                    "<p class='text'>" + data.first[i].p + "</p></div><div class='p1' >"+ data.first[i].date +"</div>");
+                    "<p class='text'>" + data.first[i].p + "</p></div><div class='p1' >" + data.first[i].date + "</div>");
                 //       console.log(data.first.length);
             }
         },
@@ -27,32 +27,40 @@ $(function () {
             alert("ERROR!!!");
         }
     });
+
+    $(".list-ul>li").hover(function(){
+        console.log("AA");
+        $(this).find("ul").css("display","block");
+    },function(){
+        console.log("BBS");
+        $(this).find("ul").css("display","none");
+    });
 });
 
-function imgsmall(imgsmall){
-    var j=$(".w380h75").length;
+function imgsmall(imgsmall) {
+    var j = $(".w380h75").length;
     var showImage = $('#show-img');
-    
+
     $('.w380h75').click(function () {
-        var i=$(this).attr("id").substr(0);
-        showImage.attr('src',"./top"+i+".JPG");
-    
-        $(".w380h75"). css("opacity","0.3");
-        $(this).css('opacity',"1");
-      
-      
+        var i = $(this).attr("id").substr(0);
+        showImage.attr('src', "./top" + i + ".JPG");
+
+        $(".w380h75").css("opacity", "0.3");
+        $(this).css('opacity', "1");
+
+
     })
-// console.log($(".w380h75").length);
+    // console.log($(".w380h75").length);
 }
 
 
 function picmouseover(pic) {
-    var css = { "border":"solid","border-color":"#010132","opacity":"0.3","object-fit":"none","width":"212px","height":"212px"}
- $(pic).css(css);
+    var css = { "border": "solid", "border-color": "#010132", "opacity": "0.3", "object-fit": "none", "width": "212px", "height": "212px" }
+    $(pic).css(css);
 }
 function picmouseout(pic) {
-    var css = {"border":"none","opacity":"1","object-fit":"unset","width":"220px","height":"220px"}
- $(pic).css(css);
+    var css = { "border": "none", "opacity": "1", "object-fit": "unset", "width": "220px", "height": "220px" }
+    $(pic).css(css);
 }
 
 
@@ -62,13 +70,17 @@ function back() {
     var showImage = $('#show-img');
     var i = $('#show-img').attr("src").substr(5, 1);
     // console.log(j);
-    if (i == 1) { i = j; showImage.attr('src', "./top" + i + ".jpg");   $(".w380h75"). css("opacity","0.3"); $(this).css('opacity',"1");}
+    if (i == 1) { i = j; showImage.attr('src', "./top" + i + ".jpg"); $(".w380h75").css("opacity", "0.3"); $(this).css('opacity', "1"); }
     else { i--; showImage.attr('src', "./top" + i + ".jpg"); }
     //  console.log(showImage.attr("src").substr(2,1));
- 
-      
-   
-  
+    $(".w380h75"). css("opacity","0.3");
+    $(".w380h75").each(function() {
+          if($(this).attr("value")==i)
+        {$(this).css('opacity',"1");}
+    });
+
+
+
 }
 function next() {
     j = $(".w380h75").length;
@@ -76,5 +88,10 @@ function next() {
     var i = $('#show-img').attr("src").substr(5, 1);
     if (i == j) { i = 1; showImage.attr('src', "./top" + i + ".jpg"); }
     else { i++; showImage.attr('src', "./top" + i + ".jpg"); }
+    $(".w380h75"). css("opacity","0.3");
+    $(".w380h75").each(function() {
+          if($(this).attr("value")==i)
+        {$(this).css('opacity',"1");}
+    });
 
 }

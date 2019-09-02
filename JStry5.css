@@ -10,11 +10,11 @@ body{
     text-align: center;
 }
 
-ul {list-style: none; position: relative;}
-ul li {float: left; position: relative;margin: 0 5px;}
+ul {list-style: none; position: relative;font-size: 14px;}
+ul li {float: left; position: relative;margin: 0 24px;}
 ul li a {display: block;}
-ul ul {display: none; position: absolute; margin: 0;padding: 0;}
-ul ul li {clear: left;   padding: 0;text-align: left;}
+ul ul {display: none; position: absolute; margin: 10px 0;padding: 0 24px 0 10px;width: 50px;background-color: #FFF;}
+ul ul li {clear: left;   padding: 0;text-align: left;margin: 0 5px;height:30px;line-height:30px;}
 
 .header{ height: 180px;}
 .center{
