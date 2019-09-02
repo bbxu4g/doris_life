@@ -35,11 +35,11 @@ ul ul li {clear: left;   padding: 0;text-align: left;}
     top: 10%;
     font-size: 10px;
 }
-.img-big{height: 656px;width: 1280px;overflow: hidden;}
+.img-big{height: 546px;width: 1000px;overflow: hidden;}
 .img-big img{max-width: 100%;vertical-align:50%}
 .control{font-size: 70px;font-weight: bold;color: #777777;width: 100px;position: absolute;top: 500px;}
 .leftcontrol{float: left;}
-.rightcontrol{left:1450px;}
+.rightcontrol{left:1100px;}
 .img-small ul{   margin: 0;padding: 0;}
 .img-small ul li{
     display: inline;
@@ -48,11 +48,11 @@ ul ul li {clear: left;   padding: 0;text-align: left;}
     padding: 0;
 }
 .img-small{overflow:hidden;height: 80px;width: 945px;width: 1280px;}
-.w380h75{width:426px;  margin-top: -51px; opacity: 0.3;}
+.w380h75{width:333px;  margin-top: -51px; opacity: 0.3;}
 .row{width: 110%;height: 1100px;}
 .readme{color: #777777;line-height: 200px;border-radius:999em;width: 300px;height: 300px;margin: 0 auto;}
-.readme p{border: solid;border-radius: inherit;width:  200px;height: 200px;}
-.pictext{width: 220px;height: 350px;float: left;margin: 4px;  position:relative;}
+.readme p{border: solid;border-radius: inherit;width:  150px;height: 200px;}
+.pictext{width: 220px;height: 350px;float: left;margin: 16px;  position:relative;}
 .pic{height: 220px;overflow: hidden;}
 h4{margin-top: 0;}
 .text{color:#606060;font-size: 8px;text-align: left;}
