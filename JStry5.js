@@ -27,15 +27,17 @@ $(function () {
             alert("ERROR!!!");
         }
     });
+//ul滑過去會出現li底下的ul
+    $(".list-ul>li").hover(function(){$(this).find("ul").css("display","block");},
+    function(){ $(this).find("ul").css("display","none");});
 
-    $(".list-ul>li").hover(function(){
-        console.log("AA");
-        $(this).find("ul").css("display","block");
-    },function(){
-        console.log("BBS");
-        $(this).find("ul").css("display","none");
-    });
+    $(".control").hover(function(){
+        console.log(this);
+        $(".control").hasClass("backgroundcolor");
+    },function(){})
 });
+
+
 
 function imgsmall(imgsmall) {
     var j = $(".w380h75").length;
@@ -47,8 +49,6 @@ function imgsmall(imgsmall) {
 
         $(".w380h75").css("opacity", "0.3");
         $(this).css('opacity', "1");
-
-
     })
     // console.log($(".w380h75").length);
 }
