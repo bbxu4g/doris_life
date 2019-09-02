@@ -30,15 +30,16 @@ $(function () {
 });
 
 function imgsmall(imgsmall){
-    var j=$(".img-small>ul").length;
+    var j=$(".w380h75").length;
     var showImage = $('#show-img');
     
     $('.w380h75').click(function () {
         var i=$(this).attr("id").substr(0);
         showImage.attr('src',"./top"+i+".JPG");
-   
+    
         $(".w380h75"). css("opacity","0.3");
         $(this).css('opacity',"1");
+      
       
     })
 // console.log($(".w380h75").length);
@@ -60,11 +61,14 @@ function back() {
     j = $(".w380h75").length;
     var showImage = $('#show-img');
     var i = $('#show-img').attr("src").substr(5, 1);
-    console.log(j);
-    if (i == 1) { i = j; showImage.attr('src', "./top" + i + ".jpg"); }
+    // console.log(j);
+    if (i == 1) { i = j; showImage.attr('src', "./top" + i + ".jpg");   $(".w380h75"). css("opacity","0.3"); $(this).css('opacity',"1");}
     else { i--; showImage.attr('src', "./top" + i + ".jpg"); }
     //  console.log(showImage.attr("src").substr(2,1));
-
+ 
+      
+   
+  
 }
 function next() {
     j = $(".w380h75").length;
