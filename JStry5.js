@@ -6,7 +6,7 @@ $(function () {
 
         showImage.attr('src', "./" + i + ".JPG");
     })
-   // console.log($(".small-pic>img").length);
+    // console.log($(".small-pic>img").length);
 
     $.ajax({
         url: "./test.json",  //要讀取的檔案路徑
@@ -27,14 +27,28 @@ $(function () {
             alert("ERROR!!!");
         }
     });
-//ul滑過去會出現li底下的ul
-    $(".list-ul>li").hover(function(){$(this).find("ul").css("display","block");},
-    function(){ $(this).find("ul").css("display","none");});
+    //ul滑過去會出現li底下的ul
+    $(".list-ul>li").hover(function () { $(this).find("ul").css("display", "block"); },
+        function () { $(this).find("ul").css("display", "none"); });
+    //左右邊滑過去變黑
+    $(".leftcontrol").hover(function () {
+        $(".leftcontrol").addClass("backcolor-left");
+        $(".leftcontrol").removeClass("backcolor-cancel"); console.log(this);
+    }, function () {
+        $(".leftcontrol").addClass("backcolor-cancel");
+        $(".leftcontrol").removeClass("backcolor-left");
+    });
+    $(".rightcontrol").hover(function () {
+        $("div.rightcontrol").addClass("backcolor-right").fadeIn(1000);
+        $("div.rightcontrol").removeClass("backcolor-cancel"); console.log(this);
+    }, function () {
+        $("div.rightcontrol").addClass("backcolor-cancel").fadeIn(1000);
+        $("div.rightcontrol").removeClass("backcolor-right");
+    });
+    //設定自動輪播
+    setInterval(function(){ next() }, 5000);
 
-    $(".control").hover(function(){
-        console.log(this);
-        $(".control").hasClass("backgroundcolor");
-    },function(){})
+  
 });
 
 
@@ -73,10 +87,9 @@ function back() {
     if (i == 1) { i = j; showImage.attr('src', "./top" + i + ".jpg"); $(".w380h75").css("opacity", "0.3"); $(this).css('opacity', "1"); }
     else { i--; showImage.attr('src', "./top" + i + ".jpg"); }
     //  console.log(showImage.attr("src").substr(2,1));
-    $(".w380h75"). css("opacity","0.3");
-    $(".w380h75").each(function() {
-          if($(this).attr("value")==i)
-        {$(this).css('opacity',"1");}
+    $(".w380h75").css("opacity", "0.3");
+    $(".w380h75").each(function () {
+        if ($(this).attr("value") == i) { $(this).css('opacity', "1"); }
     });
 
 
@@ -88,10 +101,9 @@ function next() {
     var i = $('#show-img').attr("src").substr(5, 1);
     if (i == j) { i = 1; showImage.attr('src', "./top" + i + ".jpg"); }
     else { i++; showImage.attr('src', "./top" + i + ".jpg"); }
-    $(".w380h75"). css("opacity","0.3");
-    $(".w380h75").each(function() {
-          if($(this).attr("value")==i)
-        {$(this).css('opacity',"1");}
+    $(".w380h75").css("opacity", "0.3");
+    $(".w380h75").each(function () {
+        if ($(this).attr("value") == i) { $(this).css('opacity', "1"); }
     });
 
 }
