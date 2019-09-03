@@ -67,6 +67,6 @@ h4{margin-top: 0;}
 .text{color:#606060;font-size: 8px;text-align: left;}
 .p2{position:absolute;z-index: 2; top:0px;left:0px;}
 .p1{position:absolute;z-index: 1;top:0px;left:0px;width: 220px;height: 220px;line-height: 220px;font-weight:bold;font-size: 8px;}
-.backcolor-left{opacity:1; background-image:linear-gradient(to right,rgba(0,0,0,.3) 0,rgba(0,0,0,.0001) 100%);}
-.backcolor-right{opacity:1; background-image:linear-gradient(to left,rgba(0,0,0,.3) 0,rgba(0,0,0,.0001) 100%);}
+.backcolor-left{opacity:1; background-image:linear-gradient(to right,rgba(0,0,0,.3) 0,rgba(0,0,0,.0001) 100%);transition: opacity 0.5s;}
+.backcolor-right{opacity:1; background-image:linear-gradient(to left,rgba(0,0,0,.3) 0,rgba(0,0,0,.0001) 100%);transition: opacity 0.5s;}
 .backcolor-cancel{opacity:0.3; background-image:none;}

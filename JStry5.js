@@ -39,10 +39,10 @@ $(function () {
         $(".leftcontrol").removeClass("backcolor-left");
     });
     $(".rightcontrol").hover(function () {
-        $("div.rightcontrol").addClass("backcolor-right").fadeIn(1000);
+        $("div.rightcontrol").addClass("backcolor-right");
         $("div.rightcontrol").removeClass("backcolor-cancel"); console.log(this);
     }, function () {
-        $("div.rightcontrol").addClass("backcolor-cancel").fadeIn(1000);
+        $("div.rightcontrol").addClass("backcolor-cancel");
         $("div.rightcontrol").removeClass("backcolor-right");
     });
     //設定自動輪播
